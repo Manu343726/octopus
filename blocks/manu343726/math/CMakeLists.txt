@@ -8,6 +8,12 @@ ADD_BIICODE_TARGETS()
 
 bii_find_boost()
 
+target_compile_options(${BII_BLOCK_TARGET} INTERFACE -S)
+
+if(NOT MSVC)
+    target_compile_options(${BII_BLOCK_TARGET} INTERFACE -std=c++1y)
+endif()
+
 # You can safely delete lines from here...
 
 ###############################################################################
